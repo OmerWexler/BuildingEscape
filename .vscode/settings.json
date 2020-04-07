@@ -1,0 +1,8 @@
+{
+	"files.exclude": {
+		"D:/Cpp/UdemyUnrealCppCourse/BuildingEscape/.vscode": true,
+		"D:/Cpp/UdemyUnrealCppCourse/BuildingEscape/Content": true,
+		"D:/Cpp/UdemyUnrealCppCourse/BuildingEscape/Intermediate": true,
+		"D:/Cpp/UdemyUnrealCppCourse/BuildingEscape/Saved": true
+	}
+}
