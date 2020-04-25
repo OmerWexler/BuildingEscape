@@ -2,9 +2,11 @@
 
 
 #include "OpenDoor.h"
+
 #include "GameFramework/Actor.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
+#include "Components/AudioComponent.h"
 
 // Sets default values for this component's properties
 UOpenDoor::UOpenDoor()
@@ -19,20 +21,31 @@ UOpenDoor::UOpenDoor()
 void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	FindAudioComponent();
+	FindTriggerActor();
 	
-	TriggerActor = GetWorld()->GetFirstPlayerController()->GetPawn();
 	InitialAngle = GetOwner()->GetActorRotation().Yaw;
 	OpenAngle += InitialAngle;
 	
 	if (!PreasurePlate) {
 		UE_LOG(LogTemp, Error, TEXT("No PreasurePlate selected on %s."), *GetOwner()->GetName())
 	}
+}
 
+void UOpenDoor::FindTriggerActor() {
 	if (!TriggerActor) {
-		UE_LOG(LogTemp, Error, TEXT("No TriggerActor selected on %s."), *GetOwner()->GetName())
+		TriggerActor = GetWorld()->GetFirstPlayerController()->GetPawn();
 	}
 }
 
+void UOpenDoor::FindAudioComponent() {
+	AudioComponent = GetOwner()->FindComponentByClass<UAudioComponent>();
+
+	if (!AudioComponent) {
+		UE_LOG(LogTemp, Error, TEXT("No AudioComponent found on %s"), *GetOwner()->GetName())
+	}
+}
 
 // Called every frame
 void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -56,10 +69,22 @@ void UOpenDoor::OpenDoor(float DeltaTime)
 {
 	float CurrentYaw = GetOwner()->GetActorRotation().Yaw;
 	GetOwner()->SetActorRotation({0.0, FMath::FInterpTo(CurrentYaw, OpenAngle, DeltaTime , OpenSpeed), 0.0});
+	
+	if (bWasLastClosed && AudioComponent) {
+		AudioComponent->Play();
+		bWasLastOpen = true;
+		bWasLastClosed = false;
+	}
 }
 
 void UOpenDoor::CloseDoor(float DeltaTime) 
 {
 	float CurrentYaw = GetOwner()->GetActorRotation().Yaw;
 	GetOwner()->SetActorRotation({0.0, FMath::FInterpTo(CurrentYaw, InitialAngle, DeltaTime , CloseSpeed), 0.0});
+	
+	if (bWasLastOpen && AudioComponent) {
+		AudioComponent->Play();
+		bWasLastClosed = true;
+		bWasLastOpen = false;
+	}
 }

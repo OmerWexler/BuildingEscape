@@ -5,7 +5,7 @@
 			"name": "BuildingEscape (Debug)",
 			"request": "launch",
 			"preLaunchTask": "BuildingEscape Win64 Debug Build",
-			"program": "D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"program": "D:\\Cpp\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-Debug.exe",
 			"args": [
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
@@ -18,7 +18,7 @@
 			"name": "BuildingEscape (DebugGame)",
 			"request": "launch",
 			"preLaunchTask": "BuildingEscape Win64 DebugGame Build",
-			"program": "D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"program": "D:\\Cpp\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
 			"args": [
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
@@ -31,7 +31,7 @@
 			"name": "BuildingEscape (Development)",
 			"request": "launch",
 			"preLaunchTask": "BuildingEscape Win64 Development Build",
-			"program": "D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\Binaries\\Win64\\UE4.exe",
+			"program": "D:\\Cpp\\BuildingEscape\\Binaries\\Win64\\UE4.exe",
 			"args": [
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
@@ -44,7 +44,7 @@
 			"name": "BuildingEscape (Shipping)",
 			"request": "launch",
 			"preLaunchTask": "BuildingEscape Win64 Shipping Build",
-			"program": "D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"program": "D:\\Cpp\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
 			"args": [
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
@@ -57,7 +57,7 @@
 			"name": "BuildingEscape (Test)",
 			"request": "launch",
 			"preLaunchTask": "BuildingEscape Win64 Test Build",
-			"program": "D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"program": "D:\\Cpp\\BuildingEscape\\Binaries\\Win64\\UE4-Win64-Test.exe",
 			"args": [
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
@@ -72,7 +72,7 @@
 			"preLaunchTask": "BuildingEscapeEditor Win64 Debug Build",
 			"program": "D:\\Epic\\UE_4.24\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
 			"args": [
-				"D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\BuildingEscape.uproject"
+				"D:\\Cpp\\BuildingEscape\\BuildingEscape.uproject"
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
 			"stopAtEntry": false,
@@ -86,7 +86,7 @@
 			"preLaunchTask": "BuildingEscapeEditor Win64 DebugGame Build",
 			"program": "D:\\Epic\\UE_4.24\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
 			"args": [
-				"D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\BuildingEscape.uproject"
+				"D:\\Cpp\\BuildingEscape\\BuildingEscape.uproject"
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
 			"stopAtEntry": false,
@@ -100,7 +100,7 @@
 			"preLaunchTask": "BuildingEscapeEditor Win64 Development Build",
 			"program": "D:\\Epic\\UE_4.24\\Engine\\Binaries\\Win64\\UE4Editor.exe",
 			"args": [
-				"D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\BuildingEscape.uproject"
+				"D:\\Cpp\\BuildingEscape\\BuildingEscape.uproject"
 			],
 			"cwd": "D:\\Epic\\UE_4.24",
 			"stopAtEntry": false,
@@ -117,7 +117,7 @@
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=\"D:\\Cpp\\UdemyUnrealCppCourse\\BuildingEscape\\BuildingEscape.uproject\"",
+				"-project=\"D:\\Cpp\\BuildingEscape\\BuildingEscape.uproject\"",
 				"-game",
 				"-engine"
 			],

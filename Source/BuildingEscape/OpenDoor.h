@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "Engine/TriggerVolume.h"
+#include "Components/AudioComponent.h"
 
 #include "OpenDoor.generated.h"
 
@@ -28,9 +29,14 @@ public:
 	virtual void CloseDoor(float DeltaTime);
 
 private:
+	virtual void FindTriggerActor();
+	virtual void FindAudioComponent();
+	
+private:
 	float InitialAngle;
 	float TimeWhenDoorWasLastOpened = 0.f;
-	AActor* TriggerActor;
+	bool bWasLastOpen = false;
+	bool bWasLastClosed = true;
 	
 	UPROPERTY(EditAnywhere)
 	float OpenAngle = 90.f;
@@ -45,5 +51,11 @@ private:
 	float CloseDelay = 1.f;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume* PreasurePlate;
+	ATriggerVolume* PreasurePlate = nullptr;
+	
+	UPROPERTY(EditAnywhere)
+	AActor* TriggerActor = nullptr;
+
+	UPROPERTY()
+	UAudioComponent* AudioComponent = nullptr;
 };
